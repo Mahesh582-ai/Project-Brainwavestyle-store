@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainwave Style Hub | Premium Clothing Store</title>
+    <link rel="stylesheet" href="Task1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+           
+        /* Modern Color Scheme */
+        :root {
+            --primary: #3a0ca3;
+            --secondary: #f72585;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --text: #4a4a4a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-actions i {
+            font-size: 1.2rem;
+            color: var(--dark);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .nav-actions i:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(58, 12, 163, 0.1) 0%, rgba(247, 37, 133, 0.1) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: var(--text);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.9rem 2.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(58, 12, 163, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: #2a0880;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(58, 12, 163, 0.4);
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .category-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .category-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .category-card:hover .category-img img {
+            transform: scale(1.1);
+        }
+
+        .category-info {
+            padding: 1.8rem;
+            text-align: center;
+        }
+
+        .category-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+
+        .shop-link {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .shop-link:hover {
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #b3b3b3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b3b3b3;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .logo-container {
+                position: static;
+                transform: none;
+                order: -1;
+                margin-bottom: 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#categories">Shop</a>
+                </div>
+                
+                <div class="logo-container">
+                    <a href="#" class="logo">Brainwave Style Hub</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="#">New Arrivals</a>
+                    <a href="#">Sale</a>
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-user"></i>
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Discover Your <span>Perfect Style</span></h1>
+            <p>Premium quality clothing for every occasion. Shop our latest collections of T-Shirts, Shirts, Pants and more.</p>
+            <a href="#categories" class="cta-button">Explore Collections</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Collections</h2>
+                <p>Browse through our premium clothing categories</p>
+            </div>
+            <div class="category-grid">
+                <!-- T-Shirts -->
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="T-Shirts">
+                    </div>
+                    <div class="category-info">
+                        <h3>T-Shirts</h3>
+                        <a href="https://www.amazon.com/t-shirts/s?k=t-shirts" target="_blank">Shop Now →</a>
+                    </div>
+                </div>
+
+                <!-- Shirts -->
+                <div class="category-card">
+                    
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="Shirts">
+                    </div>
+                    <div class="category-info">
+                        <h3>Shirts</h3>
+                        <a href="https://www.amazon.com/s?k=formal+shirts" target="_blank">Shop Now →</a>
+                    </div>
+                </div>
+
+                <!-- Pants -->
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://imgs.search.brave.com/06WiV98C8bNK2PHkmItkqrLb3eQMXSiYC0_DFT7jDus/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kZWFy/Ym9ybmRlbmltLnVz/L2Nkbi9zaG9wL3By/b2R1Y3RzL2I2Zjg2/Y2EyNDU4NTFlYzUz/MzQ5ZDY1YzU2ODk2/MzhjLmpwZz92PTE2/MDA5Njc2NjY" alt="Pants">
+                    </div>
+                    <div class="category-info">
+                        <h3>Pants</h3>
+                        <a href="https://www.amazon.com/s?k=formal+paints" class="_blank">Shop Now →</a>
+                    </div>
+                </div>
+
+                <!-- Underwear - NEW WORKING IMAGE -->
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://imgs.search.brave.com/mXt0B-lknMs_qOwnFcxfbXXeZpEJJoRm4Ou2ank8E2o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTE4RDVmd2l0Ukwu/anBn" alt="Underwear">
+                    </div>
+                    <div class="category-info">
+                        <h3>Underwear</h3>
+                        <a href="https://www.amazon.com/s?k=underwears" class="_blank">Shop Now →</a>
+                    </div>
+                </div>
+
+                <!-- Kurthas -->
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://imgs.search.brave.com/CtygAn9iTqIixB_i9vO9P7c1YM_WKRANiEFTJd9cVEc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9rYWFz/aGNvbGxlY3Rpb24u/Y29tL2Nkbi9zaG9w/L2ZpbGVzL2lsX2Z1/bGx4ZnVsbC42Njc2/NTkzOTg2X2tndzJf/NjAweC5qcGc_dj0x/NzQxNTU4MDI1" alt="Kurthas">
+                    </div>
+                    <div class="category-info">
+                        <h3>Kurthas</h3>
+                        <a href="https://www.amazon.com/s?k=mens+full+kurtas" class="_blank">Shop Now →</a>
+                    </div>
+                </div>
+
+                <!-- Nightwear -->
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://imgs.search.brave.com/OHR6F9KjhKsz3bdHWsPHyxnG7DPx-xpclXgDvQwU8Q0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFJSElqQVhvZUwu/anBn" alt="Nightwear">
+                    </div>
+                    <div class="category-info">
+                        <h3>Nightwear</h3>
+                        <a href="https://www.amazon.com/s?k=Nightware" class="_blank">Shop Now →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Brainwave Style Hub</h3>
+                    <p>Your destination for premium quality clothing that combines style and comfort.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Shop</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">T-Shirts</a></li>
+                        <li><a href="#">Shirts</a></li>
+                        <li><a href="#">Pants</a></li>
+                        <li><a href="#">Underwear</a></li>
+                        <li><a href="#">Kurthas</a></li>
+                        <li><a href="#">Nightwear</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Help</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Email: hello@brainwavestyle.com</a></li>
+                        <li><a href="#">Phone: +1 (123) 456-7890</a></li>
+                        <li><a href="#">Address: 123 Fashion St, New York</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Brainwave Style Hub. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="Task1.js"></script>
+</body>
+</html>
